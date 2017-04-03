@@ -1,0 +1,19 @@
+
+<h1>Mon app</h1>
+<input type="text" [(ngModel)]="premiereVariable" />
+{{premiereVariable}}
+{{monObjet.attribut1}} {{monObjet.attribut2}}
+
+<button (click)="ajout()">Click</button>
+
+<p *ngFor="let item of tableau; let ind = index; let pair = even">
+    <!--<span *ngIf="pair">-->
+    {{ind}} {{item}}
+    <button (click)="suppression(ind)">x</button>
+    <!--</span>-->
+</p>
+
+
+<input type="text" #squejveux />
+
+{{squejveux.value}}

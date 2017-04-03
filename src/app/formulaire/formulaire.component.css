@@ -1,0 +1,12 @@
+input {
+    border: 1px solid gray;
+    box-shadow: none;
+}
+
+.ng-valid:not(form) {
+    border:1px solid green;
+}
+
+.ng-invalid.ng-dirty:not(form) {
+    border: 1px solid red;
+}

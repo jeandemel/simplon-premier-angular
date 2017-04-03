@@ -1,0 +1,53 @@
+<h1>Mon Premier Formulaire</h1>
+
+<form (submit)="inscription()" #formulaire="ngForm">
+  <p>
+    <label>Nom : </label>
+    <input type="text" 
+    name="nom" 
+    [(ngModel)]="nouvelUtilisateur.nom" 
+    required
+    maxlength="24" 
+    #nom="ngModel" />
+    <span [hidden]="nom.valid" >
+      Le nom est obligatoire et ne doit pas faire plus de 24 caractères.
+    </span>
+  </p>
+  <p>
+    <label>Prénom : </label>
+    <input type="text" name="prenom" [(ngModel)]="nouvelUtilisateur.prenom" />
+  </p>
+  <p>
+    <label>Email : </label>
+    <input type="email" 
+    name="email" 
+    [(ngModel)]="nouvelUtilisateur.email" 
+    required />
+  </p>
+  <p>
+    <label>Mot de Passe : </label>
+    <input type="password" 
+    name="mdp" 
+    [(ngModel)]="nouvelUtilisateur.mdp" 
+    required
+    minlength="3"
+    #mdp="ngModel" />
+    <span *ngIf="mdp.errors && mdp.dirty">
+      <span [hidden]="!mdp.errors.minlength">
+        Le mot de passe doit faire au moins 3 caractères
+      </span>
+      <span [hidden]="!mdp.errors.required">
+        Le mot de passe est requis
+      </span>
+    </span>
+  </p>
+  <p>
+    <label>Répéter Mot de Passe : </label>
+    <input type="password" 
+    name="mdp2" 
+    [(ngModel)]="mdp2" 
+    required
+    [equal]="nouvelUtilisateur.mdp" />
+  </p>
+  <button [disabled]="!formulaire.valid" type="submit">S'inscrire</button>
+</form>
