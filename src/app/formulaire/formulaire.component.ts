@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Utilisateur } from '../shared/utilisateur';
 import { PremierService } from '../shared/premier.service';
+import { CompteurService } from '../shared/compteur.service';
 
 @Component({
   selector: 'app-formulaire',
@@ -18,7 +19,8 @@ export class FormulaireComponent implements OnInit {
  * question.
  * @param premierService ici nous avons besoin d'un provider de type PremierService
  */
-  constructor(private premierService:PremierService) {
+  constructor(private premierService:PremierService, 
+              private compteurService:CompteurService) {
     this.nouvelUtilisateur = new Utilisateur();
    }
 
@@ -29,5 +31,6 @@ export class FormulaireComponent implements OnInit {
   inscription(): void {
     console.log(this.nouvelUtilisateur);
     console.log(this.mdp2);
+    this.compteurService.incrementer();
   }
 }

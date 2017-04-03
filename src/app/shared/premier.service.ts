@@ -1,8 +1,9 @@
+import { Injectable } from '@angular/core';
 
-
+@Injectable()
 export class PremierService {
 
     methode() {
-        alert('bloup');
+        console.log('from PremierService');
     }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PremierService } from './shared/premier.service';
+import { CompteurService } from './shared/compteur.service';
 
 /**
  * On declare ici les providers des classes qu'on voudra pouvoir injecter
@@ -15,7 +16,7 @@ import { PremierService } from './shared/premier.service';
     <a routerLink="/formulaire">Formulaire</a>
     <a routerLink="/erreur">404</a>
     <router-outlet></router-outlet>`,
-    providers: [PremierService]
+    providers: [PremierService, CompteurService]
     //afficher les 2 attributs dans le template
 })
 export class AppComponent {
