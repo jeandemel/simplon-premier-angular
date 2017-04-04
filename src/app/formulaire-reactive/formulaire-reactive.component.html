@@ -1,0 +1,38 @@
+<h1>Mon Premier Formulaire Réactif</h1>
+
+<form (submit)="inscription()" [formGroup]="formulaire">
+  <p>
+    <label>Nom : </label>
+    <input type="text" formControlName="nom" />
+    <span [hidden]="formulaire.get('nom').valid">
+      Le nom est obligatoire et doit faire moins de 24 caractères
+    </span>
+  </p>
+  <p>
+    <label>Prénom : </label>
+    <input type="text" formControlName="prenom" />
+  </p>
+  <p>
+    <label>Email : </label>
+    <input type="email" formControlName="email" />
+    <span [hidden]="formulaire.get('email').valid">
+      L'email n'est pas au bon format
+    </span>
+  </p>
+  <p>
+    <label>Mot de Passe : </label>
+    <input type="password" formControlName="mdp" />
+    <span [hidden]="formulaire.get('mdp').valid">
+      Le mot de passe doit faire au moins 3 caractères
+    </span>
+  </p>
+  <p>
+    <label>Répéter Mot de Passe : </label>
+    <input type="password" formControlName="mdp2" />
+    <span [hidden]="!formulaire.getError('notSamePasswords')">
+      Les mots de passe ne correspondent pas
+    </span>
+    
+  </p>
+  <button [disabled]="formulaire.invalid" type="submit">S'inscrire</button>
+</form>

@@ -14,6 +14,7 @@ import { CompteurService } from './shared/compteur.service';
     template: `
     <a routerLink="/premier">Première Page</a>
     <a routerLink="/formulaire">Formulaire</a>
+    <a routerLink="/formulaire-reactive">Formulaire Reactive</a>
     <a routerLink="/erreur">404</a>
     <router-outlet></router-outlet>`,
     providers: [PremierService, CompteurService]
