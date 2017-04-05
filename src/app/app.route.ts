@@ -3,6 +3,7 @@ import { PremierComponent } from './premier.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { FormulaireReactiveComponent } from './formulaire-reactive/formulaire-reactive.component';
+import { AjaxComponent } from './ajax/ajax.component';
 
 /*
 On définit ici les différentes routes de notre application
@@ -20,5 +21,6 @@ export const routes:Routes = [
     {path: '', redirectTo: 'premier', pathMatch:'full'},
     {path: 'formulaire', component:FormulaireComponent},
     {path: 'formulaire-reactive', component: FormulaireReactiveComponent},
+    {path: 'ajax', component:AjaxComponent},
     {path: '**', component:PageNotFoundComponent}
 ];

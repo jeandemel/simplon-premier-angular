@@ -9,13 +9,15 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { equal, EqualValidator } from './shared/validation-equal';
 import { FormulaireReactiveComponent } from './formulaire-reactive/formulaire-reactive.component';
-
+import {HttpModule} from '@angular/http';
+import { AjaxComponent } from './ajax/ajax.component';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpModule,
         RouterModule.forRoot(routes)
     ],
     declarations: [
@@ -24,7 +26,8 @@ import { FormulaireReactiveComponent } from './formulaire-reactive/formulaire-re
         PageNotFoundComponent,
         FormulaireComponent,
         EqualValidator,
-        FormulaireReactiveComponent
+        FormulaireReactiveComponent,
+        AjaxComponent
     ],
     bootstrap: [
         AppComponent
