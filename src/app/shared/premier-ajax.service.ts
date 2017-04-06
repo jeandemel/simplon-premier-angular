@@ -1,5 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+/**
+ * On importe les Observable de la librairie RxJs ainsi que les opérateurs
+ * dont nous allons nous servir ici. On pourrait techniquement importer
+ * l'intégralité de la librairie et de ses opérateur en une ligne, mais c'est
+ * déconseillé car celle ci fait une certaine taille et on ne va au final se
+ * servir que de quelques morceaux spécifiques
+ */
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+/**
+ * Il existe un opérateur rxjs qui transformera un Observable<T> en Promise<T>
+ * pour ceux qui n'arrivent vraiment pas à intégrer le concept et la logique
+ * des observable mais qui sont plus habitué.e.s au Promise
+ * Ceci dit, la team Angular déconseille l'utilisation de cet opérateur, le 
+ * framework ayant été conçu à la base avec les Observable (qui reviennent à
+ * d'autres endroits non liés à l'ajax) et qui permettent plus de choses
+ */
+// import 'rxjs/add/operator/toPromise'
+
 
 @Injectable()
 export class PremierAjaxService {
@@ -14,7 +34,7 @@ export class PremierAjaxService {
   */
   constructor(private http:Http) { }
 
-  getMessage() {
+  getMessage():Observable<{message:string}> {
     /*
     Le service Http possède une méthode pour chaque type de requête HTTP possible
     (GET,POST,PUT,DELETE...)
@@ -31,12 +51,34 @@ export class PremierAjaxService {
     de donnée est terminé (cette troisième fonction n'est pas nécessaire dans
     le cas d'une requête ajax)
      */
-    this.http.get(this.wsUrl+'/test')
-    .subscribe((reponse:Response) => {
-      console.log(reponse.json());
-    },
-    (error)=> {
-      console.log(error);
-    });
+    return this.http.get(this.wsUrl+'/test')
+            .map((reponse:Response) => reponse.json());
+    /*
+    On return ici l'Observable pour le passer au component pour que celui ci
+    puisse décider quoi faire des informations récupérées par la requête, mais 
+    en l'occurrence on ne veut pas retourner toutes les informations de la requêtes
+    notre component pour des raisons de sécurité, on ne veut lui envoyer que
+    le body qu'on obtient avec la méthode .json() de la réponse.
+    On utilise donc l'opérateur .map() qui va renvoyer une nouvel observable en
+    modifiant le contenu de celui ci selon la fonction qu'on lui fourni
+    */
+  }
+
+  getListe():Observable<string[]> {
+    
+    return this.http.get(this.wsUrl+'/lister')
+            .map((reponse:Response) => reponse.json());
+  }
+
+  /**
+   * Méthode pour ajouter un élément à la liste via un POST sur l'url 
+   * http://192.168.1.92:9090/premier-router/ajout 
+   * Le webservice attend une donnée sous le modèle : 
+   * {item: 'nouvel item'}
+   * 
+   */
+  addToListe(nouvelItem:string) {
+    return this.http.post(this.wsUrl+'/ajout', {item: nouvelItem})
+            .map((reponse:Response) => reponse.json().message);
   }
 }

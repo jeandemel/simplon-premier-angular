@@ -1,3 +1,14 @@
 <h1>Ajax</h1>
 
 <button (click)="getMessage()">Lancer Get</button>
+
+{{message}}
+
+<ul>
+    <li *ngFor="let item of liste">{{item}}</li>
+</ul>
+
+<form (submit)="ajouterItem()">
+    <input type="text" name="nouvelItem" [(ngModel)]="nouvelItem"/>
+    <button type="submit">Ajouter</button>
+</form>
