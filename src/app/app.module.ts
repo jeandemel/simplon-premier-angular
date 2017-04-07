@@ -11,6 +11,8 @@ import { equal, EqualValidator } from './shared/validation-equal';
 import { FormulaireReactiveComponent } from './formulaire-reactive/formulaire-reactive.component';
 import {HttpModule} from '@angular/http';
 import { AjaxComponent } from './ajax/ajax.component';
+import { ListeUtilisateursComponent } from './liste-utilisateurs/liste-utilisateurs.component';
+import { DetailUtilisateurComponent } from './liste-utilisateurs/detail-utilisateur/detail-utilisateur.component';
 
 @NgModule({
     imports: [
@@ -27,7 +29,9 @@ import { AjaxComponent } from './ajax/ajax.component';
         FormulaireComponent,
         EqualValidator,
         FormulaireReactiveComponent,
-        AjaxComponent
+        AjaxComponent,
+        ListeUtilisateursComponent,
+        DetailUtilisateurComponent
     ],
     bootstrap: [
         AppComponent

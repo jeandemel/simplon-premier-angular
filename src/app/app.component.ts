@@ -18,6 +18,7 @@ import { PremierAjaxService } from './shared/premier-ajax.service';
     <a routerLink="/formulaire-reactive">Formulaire Reactive</a>
     <a routerLink="/erreur">404</a>
     <a routerLink="/ajax">Ajax</a>
+    <a routerLink="/liste-users">Liste Utilisateurs</a>
     <router-outlet></router-outlet>`,
     providers: [
         PremierService, 

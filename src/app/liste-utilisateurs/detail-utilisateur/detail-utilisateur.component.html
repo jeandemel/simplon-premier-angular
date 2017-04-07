@@ -1,0 +1,17 @@
+
+
+
+<!-- Faire en sorte que les informations de l'utilisateur puissent être modifiées
+et que celles ci se répercutent sur le component parent au click sur un
+bouton sauvegarder (qui émettra "sans doute" un event onSave) -->
+<!-- bonus : Faire que les champs de modifications et le sauvegarder ne 
+s'affichent qu'au click sur un bouton "éditer" -->
+
+<ul>
+  <li>Id : {{user._id}}</li>
+  <li>Nom : {{user.nom}}</li>
+  <li>Prénom : {{user.prenom}}</li>
+  <li>Email : <input type="text" [(ngModel)]="user.email" /></li>
+</ul>
+
+<button (click)="clickSupprimer()">Supprimer</button>
