@@ -15,5 +15,6 @@ côté component il y aura une variable @Input()something
 (ou @Input('something')nomVariable alternativement) -->
 <app-detail-utilisateur *ngIf="selectedUser"
                         [user]="selectedUser"
-                        (onDelete)="supprimerUser($event)">
+                        (onDelete)="supprimerUser($event)"
+                        (onModif)="modifierUser($event)">
 </app-detail-utilisateur>

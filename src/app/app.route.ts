@@ -5,6 +5,7 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
 import { FormulaireReactiveComponent } from './formulaire-reactive/formulaire-reactive.component';
 import { AjaxComponent } from './ajax/ajax.component';
 import { ListeUtilisateursComponent } from './liste-utilisateurs/liste-utilisateurs.component';
+import { RouteArgumentComponent } from './route-argument/route-argument.component';
 
 /*
 On définit ici les différentes routes de notre application
@@ -24,5 +25,6 @@ export const routes:Routes = [
     {path: 'formulaire-reactive', component: FormulaireReactiveComponent},
     {path: 'ajax', component:AjaxComponent},
     {path: 'liste-users', component:ListeUtilisateursComponent},
+    {path: 'route-argument/:message', component:RouteArgumentComponent},
     {path: '**', component:PageNotFoundComponent}
 ];

@@ -13,6 +13,7 @@ import {HttpModule} from '@angular/http';
 import { AjaxComponent } from './ajax/ajax.component';
 import { ListeUtilisateursComponent } from './liste-utilisateurs/liste-utilisateurs.component';
 import { DetailUtilisateurComponent } from './liste-utilisateurs/detail-utilisateur/detail-utilisateur.component';
+import { RouteArgumentComponent } from './route-argument/route-argument.component';
 
 @NgModule({
     imports: [
@@ -31,7 +32,8 @@ import { DetailUtilisateurComponent } from './liste-utilisateurs/detail-utilisat
         FormulaireReactiveComponent,
         AjaxComponent,
         ListeUtilisateursComponent,
-        DetailUtilisateurComponent
+        DetailUtilisateurComponent,
+        RouteArgumentComponent
     ],
     bootstrap: [
         AppComponent

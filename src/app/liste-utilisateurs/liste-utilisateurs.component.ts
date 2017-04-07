@@ -29,4 +29,10 @@ export class ListeUtilisateursComponent implements OnInit {
     this.selectedUser = null;
   }
 
+  modifierUser(user:Utilisateur) {
+    this.selectedUser.nom = user.nom;
+    this.selectedUser.prenom = user.prenom;
+    this.selectedUser.email = user.email;
+  }
+
 }
