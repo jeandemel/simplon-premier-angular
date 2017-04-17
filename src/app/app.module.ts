@@ -14,6 +14,7 @@ import { AjaxComponent } from './ajax/ajax.component';
 import { ListeUtilisateursComponent } from './liste-utilisateurs/liste-utilisateurs.component';
 import { DetailUtilisateurComponent } from './liste-utilisateurs/detail-utilisateur/detail-utilisateur.component';
 import { RouteArgumentComponent } from './route-argument/route-argument.component';
+import { ListeChienComponent } from './gestion-chien/liste-chien/liste-chien.component';
 
 @NgModule({
     imports: [
@@ -33,7 +34,8 @@ import { RouteArgumentComponent } from './route-argument/route-argument.componen
         AjaxComponent,
         ListeUtilisateursComponent,
         DetailUtilisateurComponent,
-        RouteArgumentComponent
+        RouteArgumentComponent,
+        ListeChienComponent
     ],
     bootstrap: [
         AppComponent
