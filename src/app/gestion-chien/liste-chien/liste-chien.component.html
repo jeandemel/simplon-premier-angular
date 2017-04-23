@@ -1,3 +1,22 @@
-<p>
-  liste-chien works!
-</p>
+<h1>Liste des chiens</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Race</th>
+      <th>Date de Naissance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let chien of chiens | async">
+      <td>{{chien.id}}</td>
+      <td>{{chien.nom}}</td>
+      <td>{{chien.race}}</td>
+      <td>{{chien.dateNaissance | date:'dd/MM/yyyy'}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<app-ajout-chien (onAjout)="ajouterChien($event)"></app-ajout-chien>

@@ -15,6 +15,7 @@ import { ListeUtilisateursComponent } from './liste-utilisateurs/liste-utilisate
 import { DetailUtilisateurComponent } from './liste-utilisateurs/detail-utilisateur/detail-utilisateur.component';
 import { RouteArgumentComponent } from './route-argument/route-argument.component';
 import { ListeChienComponent } from './gestion-chien/liste-chien/liste-chien.component';
+import { AjoutChienComponent } from './gestion-chien/ajout-chien/ajout-chien.component';
 
 @NgModule({
     imports: [
@@ -35,7 +36,8 @@ import { ListeChienComponent } from './gestion-chien/liste-chien/liste-chien.com
         ListeUtilisateursComponent,
         DetailUtilisateurComponent,
         RouteArgumentComponent,
-        ListeChienComponent
+        ListeChienComponent,
+        AjoutChienComponent
     ],
     bootstrap: [
         AppComponent

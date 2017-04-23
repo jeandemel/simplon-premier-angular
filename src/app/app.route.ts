@@ -1,3 +1,4 @@
+import {ListeChienComponent} from './gestion-chien/liste-chien/liste-chien.component';
 import { Routes } from '@angular/router';
 import { PremierComponent } from './premier.component';
 import { PageNotFoundComponent } from './page-not-found.component';
@@ -25,6 +26,7 @@ export const routes:Routes = [
     {path: 'formulaire-reactive', component: FormulaireReactiveComponent},
     {path: 'ajax', component:AjaxComponent},
     {path: 'liste-users', component:ListeUtilisateursComponent},
+    {path: 'liste-chiens', component:ListeChienComponent},
     {path: 'route-argument/:message', component:RouteArgumentComponent},
     {path: '**', component:PageNotFoundComponent}
 ];

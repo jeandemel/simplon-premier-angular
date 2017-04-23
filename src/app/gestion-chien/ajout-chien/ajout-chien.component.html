@@ -1,0 +1,12 @@
+
+<form (submit)="submitAjout()" [formGroup]="formuChien">
+  <label for="nom">Nom : </label>
+  <input id="nom" formControlName="nom" type="text" />
+  <label for="race">Race : </label>
+  <input id="race" formControlName="race" type="text" />
+  <label for="date">Date de Naissance : </label>
+  <input id="date" formControlName="dateNaissance" type="text" />
+
+  <button type="submit" [disabled]="formuChien.invalid">Ajouter</button>
+
+</form>

@@ -1,3 +1,4 @@
+import {ChienService} from './shared/chien.service';
 import { Component } from '@angular/core';
 import { PremierService } from './shared/premier.service';
 import { CompteurService } from './shared/compteur.service';
@@ -19,11 +20,13 @@ import { PremierAjaxService } from './shared/premier-ajax.service';
     <a routerLink="/erreur">404</a>
     <a routerLink="/ajax">Ajax</a>
     <a routerLink="/liste-users">Liste Utilisateurs</a>
+    <a routerLink="/liste-chiens">Gestion Chiens</a>
     <router-outlet></router-outlet>`,
     providers: [
         PremierService, 
         CompteurService,
-        PremierAjaxService
+        PremierAjaxService,
+        ChienService
     ]
     //afficher les 2 attributs dans le template
 })
