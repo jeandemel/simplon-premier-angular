@@ -14,6 +14,10 @@ import { AjaxComponent } from './ajax/ajax.component';
 import { ListeUtilisateursComponent } from './liste-utilisateurs/liste-utilisateurs.component';
 import { DetailUtilisateurComponent } from './liste-utilisateurs/detail-utilisateur/detail-utilisateur.component';
 import { RouteArgumentComponent } from './route-argument/route-argument.component';
+import { DirectivesAttributComponent } from './directives-attribut/directives-attribut.component';
+import { SurbrillanceDirective } from './shared/surbrillance.directive';
+import { ChangeTailleDirective } from './shared/change-taille.directive';
+import { DraggableDirective } from './shared/draggable.directive';
 
 @NgModule({
     imports: [
@@ -33,7 +37,11 @@ import { RouteArgumentComponent } from './route-argument/route-argument.componen
         AjaxComponent,
         ListeUtilisateursComponent,
         DetailUtilisateurComponent,
-        RouteArgumentComponent
+        RouteArgumentComponent,
+        DirectivesAttributComponent,
+        SurbrillanceDirective,
+        ChangeTailleDirective,
+        DraggableDirective
     ],
     bootstrap: [
         AppComponent

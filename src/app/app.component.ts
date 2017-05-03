@@ -19,6 +19,7 @@ import { PremierAjaxService } from './shared/premier-ajax.service';
     <a routerLink="/erreur">404</a>
     <a routerLink="/ajax">Ajax</a>
     <a routerLink="/liste-users">Liste Utilisateurs</a>
+    <a routerLink="/directives-attribut">Directives Attribut</a>
     <router-outlet></router-outlet>`,
     providers: [
         PremierService, 
