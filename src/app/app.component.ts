@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PremierService } from './shared/premier.service';
 import { CompteurService } from './shared/compteur.service';
 import { PremierAjaxService } from './shared/premier-ajax.service';
+import { ConvertService } from './convert.service';
 
 /**
  * On declare ici les providers des classes qu'on voudra pouvoir injecter
@@ -20,11 +21,13 @@ import { PremierAjaxService } from './shared/premier-ajax.service';
     <a routerLink="/ajax">Ajax</a>
     <a routerLink="/liste-users">Liste Utilisateurs</a>
     <a routerLink="/directives-attribut">Directives Attribut</a>
+    <a routerLink="/pipes">Pipes</a>
     <router-outlet></router-outlet>`,
     providers: [
         PremierService, 
         CompteurService,
-        PremierAjaxService
+        PremierAjaxService,
+        ConvertService
     ]
     //afficher les 2 attributs dans le template
 })

@@ -7,6 +7,7 @@ import { AjaxComponent } from './ajax/ajax.component';
 import { ListeUtilisateursComponent } from './liste-utilisateurs/liste-utilisateurs.component';
 import { RouteArgumentComponent } from './route-argument/route-argument.component';
 import { DirectivesAttributComponent } from './directives-attribut/directives-attribut.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 /*
 On définit ici les différentes routes de notre application
@@ -28,5 +29,6 @@ export const routes:Routes = [
     {path: 'liste-users', component:ListeUtilisateursComponent},
     {path: 'route-argument/:message', component:RouteArgumentComponent},
     {path: 'directives-attribut', component:DirectivesAttributComponent},
+    {path: 'pipes', component:PipesComponent},
     {path: '**', component:PageNotFoundComponent}
 ];

@@ -18,6 +18,9 @@ import { DirectivesAttributComponent } from './directives-attribut/directives-at
 import { SurbrillanceDirective } from './shared/surbrillance.directive';
 import { ChangeTailleDirective } from './shared/change-taille.directive';
 import { DraggableDirective } from './shared/draggable.directive';
+import { PipesComponent } from './pipes/pipes.component';
+import { ExemplePipe } from './shared/exemple.pipe';
+import { ConvertisseurPipe } from './convertisseur.pipe';
 
 @NgModule({
     imports: [
@@ -41,7 +44,10 @@ import { DraggableDirective } from './shared/draggable.directive';
         DirectivesAttributComponent,
         SurbrillanceDirective,
         ChangeTailleDirective,
-        DraggableDirective
+        DraggableDirective,
+        PipesComponent,
+        ExemplePipe,
+        ConvertisseurPipe
     ],
     bootstrap: [
         AppComponent

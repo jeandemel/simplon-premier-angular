@@ -1,0 +1,34 @@
+<p>
+    <!--Un Pipe est une méthode de transformation de données que 
+  l'on pourra appliquer à la volée sur les variables dans le template.
+  Le Pipe ne modifie pas la valeur originale de la variable, c'est
+  surtout un outil pour l'affichage.-->
+    ma date est : {{maDate | date:dateStyle}}
+
+    <input type="radio" value="dd/MM/yyyy" name="dateStyle" [(ngModel)]="dateStyle">
+
+    <input type="radio" value="yyyy-MM-dd" name="dateStyle" [(ngModel)]="dateStyle">
+    <span>
+        {{10 | currency:'USD':true}}
+    </span> {{'bloup' | uppercase | exemple}}
+
+    <span>
+      {{10 | convertisseur:'EUR':'USD' | async}}
+
+    </span>
+</p>
+
+<p>
+    <select [(ngModel)]="from">
+      <option *ngFor="let devise of devises | async">{{devise}}</option>
+    </select>
+    <input type="number" [(ngModel)]="valeur">
+
+    <select [(ngModel)]="to">
+      <option *ngFor="let devise of devises | async">{{devise}}</option>
+    </select>
+    <button (click)="convertir(from,to,valeur)">convertir</button>
+    <span>
+    {{resultat}}
+    </span>
+</p>
