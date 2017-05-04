@@ -11,7 +11,9 @@ export class PipesComponent implements OnInit {
   maDate:Date;
   devises:Observable<string[]>;
   resultat:number;
-
+  from:string;
+  to:string;
+  valeur:number = 0;
   constructor(private convert:ConvertService) {
     this.maDate = new Date(2002, 10, 15);
    }
@@ -20,8 +22,8 @@ export class PipesComponent implements OnInit {
     this.devises = this.convert.getDevises();
   }
 
-  convertir(from:string,to:string,valeur:number):void {
-    this.convert.convertir(from, to, valeur)
+  convertir():void {
+    this.convert.convertir(this.from, this.to, this.valeur)
     .subscribe((data) => this.resultat = data);
   }
 

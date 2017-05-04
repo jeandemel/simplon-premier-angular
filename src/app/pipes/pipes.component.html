@@ -20,14 +20,16 @@
 
 <p>
     <select [(ngModel)]="from">
+      <option [value]="undefined" disabled="true" hidden>Choisir la devise de départ</option>
       <option *ngFor="let devise of devises | async">{{devise}}</option>
     </select>
     <input type="number" [(ngModel)]="valeur">
 
     <select [(ngModel)]="to">
+      <option [value]="undefined" disabled="true" hidden>Choisir la devise cible</option>
       <option *ngFor="let devise of devises | async">{{devise}}</option>
     </select>
-    <button (click)="convertir(from,to,valeur)">convertir</button>
+    <button (click)="convertir()" [disabled]="!to || !from">convertir</button>
     <span>
     {{resultat}}
     </span>
