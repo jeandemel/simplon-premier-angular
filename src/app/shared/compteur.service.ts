@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class CompteurService{
-    private compteur:number = 0;
+    compteur:number = 0;
 
     constructor(private premierService:PremierService) {}
 
